@@ -1,0 +1,115 @@
+/*CSS FOR TITLE SCREEN*/
+
+/* background image */
+.titleScreen {
+    background-image: url('https://wallpaperaccess.com/full/1486722.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* title and play button positioning */
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    font-family: 'Alfa Slab One', sans-serif;
+}
+
+/* title decoration */
+.title {
+    font-size: 11rem;
+    color: #6D0000;
+    text-shadow: 6px 6px 5px black;
+}
+
+/* play button decoration */
+.play {
+    text-decoration: none;
+    background-color: white;
+    font-size: 2.5rem;
+    padding: 10px 20px 10px 20px;
+    border-radius: 10px;
+    color: black;
+    box-shadow: 3px 7px 5px black;
+}
+
+/* interact with the play button */
+.play:hover, .play:focus {
+    background-color: hsl(0, 0%, 70%);
+    
+}
+
+/* CSS FOR GAME SCREEN */
+
+/* table decoration and placement */
+td {
+    border: 1px solid black;
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+table {
+    border-spacing: 0px;
+    /* background: url('https://curehht.org/wp-content/uploads/2017/05/water-background-image-1024x683.jpg'); */
+    background-repeat: no-repeat;
+}
+
+th {
+    /* background: none; */
+    color: white; 
+}
+
+
+.gameboard1 {
+    float: left;
+    margin: 2% 0% 7% 25%;
+}
+
+.gameboard2 {
+    float: right;
+    margin: 2% 25% 7% 0%;
+}
+
+/* top message decoration and placement */
+.message {
+    text-align: center;
+    margin: 4% auto 0 auto;
+    width: 30%;
+    font-size: 1.5rem;
+    font-family: 'Alfa Slab One', sans-serif;
+    color: white;
+    text-shadow: 6px 4px 5px black;
+}
+
+/* background */
+.gameScreen {
+    background: url('https://img1.wallspic.com/previews/9/7/9/0/4/140979/140979-video_games-massively_multiplayer_online_game-naval_warfare-battlecruiser-warship-x750.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    content: "";
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+}
+
+/* Start and Rotate buttons */
+.buttons {
+text-align: center;
+margin-top: 0;
+}
+
+.gameboardMessage {
+    color: white;
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 3px 3px 3px black;
+}
+
+
