@@ -27,7 +27,7 @@
 /* play button decoration */
 .play {
     text-decoration: none;
-    background-color: white;
+    background-color: orange;
     font-size: 2.5rem;
     padding: 10px 20px 10px 20px;
     border-radius: 10px;
@@ -37,7 +37,7 @@
 
 /* interact with the play button */
 .play:hover, .play:focus {
-    background-color: hsl(0, 0%, 70%);
+    background-color: hsl(39, 100%, 40%);
     
 }
 
@@ -48,12 +48,15 @@ td {
     border: 1px solid black;
     height: 2.5rem;
     width: 2.5rem;
+    background-color: lightblue;
+    opacity: 60%;
 }
 
 table {
     border-spacing: 0px;
     /* background: url('https://curehht.org/wp-content/uploads/2017/05/water-background-image-1024x683.jpg'); */
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
+    
 }
 
 th {
@@ -64,12 +67,12 @@ th {
 
 .gameboard1 {
     float: left;
-    margin: 2% 0% 7% 25%;
+    margin: 2% 0% 2% 25%;
 }
 
 .gameboard2 {
     float: right;
-    margin: 2% 25% 7% 0%;
+    margin: 2% 25% 2% 0%;
 }
 
 /* top message decoration and placement */
@@ -98,12 +101,7 @@ th {
     z-index: -1;   
 }
 
-/* Start and Rotate buttons */
-.buttons {
-text-align: center;
-margin-top: 0;
-}
-
+/* player and computer messages at the bottom of the boards */
 .gameboardMessage {
     color: white;
     margin-top: 10px;
@@ -112,4 +110,20 @@ margin-top: 0;
     text-shadow: 3px 3px 3px black;
 }
 
+/* Start and Rotate buttons */
+.buttons {
+    text-align: center;
+}
 
+.start, .rotate {
+    font-size: 18px;
+    padding: 5px 7px;
+    margin-left: 15px;
+    box-shadow: 2px -2px 3px black;
+    font-family: 'Alfa Slab One', sans-serif;
+    background-color: orange;
+}
+
+.start:hover, .start:focus, .rotate:hover, .rotate.focus {
+    background-color: hsl(39, 100%, 40%);
+}
