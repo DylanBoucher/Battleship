@@ -50,6 +50,7 @@ td {
     width: 2.5rem;
     background-color: lightblue;
     opacity: 60%;
+    /* cursor: crosshair; */
 }
 
 table {
@@ -127,3 +128,18 @@ th {
 .start:hover, .start:focus, .rotate:hover, .rotate.focus {
     background-color: hsl(39, 100%, 40%);
 }
+
+.ships {
+    text-align: center;
+    color: white;
+    
+}
+
+.hit {
+    color: red;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 100%;
+    text-align: center;
+
+} 
