@@ -136,10 +136,9 @@ th {
 }
 
 .hit {
-    color: red;
-    background-repeat: no-repeat;
-    background-size: cover;
+    color: #f3172d;
     opacity: 100%;
     text-align: center;
-
+    font-size: 28px;
+    font-family: 'Alfa Slab One', sans-serif;
 } 

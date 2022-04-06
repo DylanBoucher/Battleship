@@ -3,8 +3,12 @@ console.log(ships)
 
 
 const cell = document.querySelectorAll('td')
-console.log(cell)
+console.log(cell[5])
 
-// cell.addEventListenter('click', () => {
-//     cell.classList.add('hit')
-// })
+
+cell.forEach(element => {
+    element.addEventListener('click', () => {
+        element.classList.add('hit')
+        element.innerText = 'X'
+    } 
+)})
