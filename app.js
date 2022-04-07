@@ -1,4 +1,4 @@
-const ships = document.querySelector('.ships')
+
 const computer = document.querySelector('.computer')
 const player = document.querySelector('.player')
 console.log(player)
@@ -10,16 +10,16 @@ const destroyer = document.querySelector('.destroyer')
 const playerGameboard = document.querySelector('.gameboard1')
 const rotate = document.querySelector('.rotate')
 const message = document.querySelector('.message')
-const start = document.querySelector('.start')
+const startButton = document.querySelector('.start')
 const computerGameboard = document.querySelector('.gameboard2')
 const cell = document.querySelectorAll('td')
 let startGame = false
-let playerTurn = false
+let playerTurn = true
 
 
 
-start.addEventListener('click', () => {
-    playerTurn = true
+startButton.addEventListener('click', () => {
+    startGame = true
 })
 
 
@@ -40,27 +40,27 @@ rotate.addEventListener('click', () => {
     destroyer.classList.toggle('rotateShips')
 })
 
-player.addEventListener('click', () => {
-    if (!playerTurn) {
-        hit()
-        playerTurn = true
-        console.log(playerTurn)
-    }else if(playerTurn) {
-        message.innerText = 'Players turn'
-    }
+// player.addEventListener('click', () => {
+//     if (!playerTurn) {
+//         hit()
+//         playerTurn = true
+//         console.log(playerTurn)
+//     }else if(playerTurn) {
+//         message.innerText = 'Players turn'
+//     }
    
-})
+// })
 
-computer.addEventListener('click', () => {
-   if(playerTurn) {
-       hit()
-       playerTurn =false
-       console.log(playerTurn)
+// computer.addEventListener('click', () => {
+//    if(playerTurn) {
+//        hit()
+//        playerTurn =false
+//        console.log(playerTurn)
        
-   }else if(!playerTurn) {
-       message.innerText = 'computers turn'
-   }
-})
+//    }else if(!playerTurn) {
+//        message.innerText = 'computers turn'
+//    }
+// })
 
 function hit() {
     cell.forEach(element => {
@@ -111,4 +111,47 @@ const rightBoard = [
     [cell[190], cell[191], cell[192], cell[193], cell[194], cell[195], cell[196], cell[197], cell[198], cell[199]],
 ]
 
-console.log(leftBoard)
+for(i = 0; i < leftBoard.length; i++) {
+    for(j = 0; j < leftBoard.length; j++)
+    leftBoard[i][j].addEventListener('click', () => {
+    // console.log(leftBoard[i][j])
+        if(playerTurn && startGame) {
+            hit()
+            console.log(playerTurn) 
+            playerTurn = false
+        }else if(!playerTurn && startGame) {
+            miss()
+            console.log(playerTurn)
+        }
+     })
+}
+
+
+//got a lot of help from Tyler Potts video: https://www.youtube.com/watch?v=tZ45HZAkbLc
+
+const ships = document.querySelector('.ships')
+const boats = document.querySelectorAll('.boats')
+
+let draggedItem = null;
+for (let i = 0; i < boats.length; i++) {
+    const item = boats[i]
+
+    item.addEventListener('dragstart', () => {
+        console.log('dragstart')
+        draggedItem = this
+        item.style.display = 'none'
+    })
+
+    item.addEventListener('dragend', () => {
+        console.log('dragend')
+        setTimeout(() => {
+            
+            draggedItem = null
+        }, 0)
+        
+    })
+
+    for(let j = 0; j < leftBoard.length; j++ ) {
+        const list = leftBoard[j]
+    }
+}
