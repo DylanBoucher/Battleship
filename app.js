@@ -135,17 +135,20 @@ const boats = document.querySelectorAll('.boats')
 let draggedItem = null;
 for (let i = 0; i < boats.length; i++) {
     const item = boats[i]
-
+    
     item.addEventListener('dragstart', () => {
-        console.log('dragstart')
-        draggedItem = this
-        item.style.display = 'none'
+        // console.log('dragstart')
+        draggedItem = item
+        setTimeout(() => {
+            item.style.display = 'none'
+        }, 0)
+        
     })
 
     item.addEventListener('dragend', () => {
-        console.log('dragend')
+        // console.log('dragend')
         setTimeout(() => {
-            
+            draggedItem.style.display = 'block'
             draggedItem = null
         }, 0)
         
@@ -153,5 +156,25 @@ for (let i = 0; i < boats.length; i++) {
 
     for(let j = 0; j < leftBoard.length; j++ ) {
         const list = leftBoard[j]
+
+        leftBoard[i][j].addEventListener('dragover', (e) => {
+            
+            e.preventDefault()
+        } )
+
+        leftBoard[i][j].addEventListener('dragenter', (e) => {
+            e.preventDefault()
+            leftBoard[i][j].style.backgroundColor = 'gray'
+        })
+
+        leftBoard[i][j].addEventListener('dragleave', (e) => {
+            leftBoard[i][j].style.backgroundColor = 'lightblue'
+        })
+
+        leftBoard[i][j].addEventListener('drop', (e) => {
+            console.log('drop')
+            leftBoard[i][j].append(draggedItem)
+            leftBoard[i][j].style.backgroundColor = 'lightblue'
+        })
     }
 }
