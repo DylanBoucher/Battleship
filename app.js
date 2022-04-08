@@ -25,6 +25,7 @@ startButton.addEventListener('click', () => {
     cells.forEach(element => {
         element.classList.add('gameStarted')
     }) 
+     message.innerHTML = 'Player 1\'s Turn'
 })
 
 //Switching Turns
@@ -47,19 +48,20 @@ rotate.addEventListener('click', () => {
 
 //Making hits and misses on the player 1 board
 player.addEventListener('click', (e) => {
-    if(startGame && playerTurn) {
+    if(startGame && !playerTurn) {
           if(e.target.classList.contains('occupied')) {
         console.log(e.target.classList)
         e.target.classList.add("hit")
         e.target.innerHTML = 'X'
         changePlayer()
-        message.innerHTML = 'Player 2\'s Turn'
+        message.innerHTML = 'Player 1\'s Turn'
     }else if(!e.target.classList.contains('occupied')) {
         e.target.classList.add("miss")
         e.target.innerHTML = '&#11044'
         changePlayer()
+        message.innerHTML = 'Player 1\'s Turn'
     }
-    }else if(!playerTurn){
+    }else if(playerTurn){
         message.innerHTML = 'Wait your turn'
         setTimeout(() =>{
             message.innerHTML = 'Player 1\'s Turn'
@@ -71,16 +73,17 @@ player.addEventListener('click', (e) => {
 
 //Making hits and misses on the player 2 board
 computer.addEventListener('click', (e) => {
-    if(startGame && !playerTurn) {
+    if(startGame && playerTurn) {
         if(e.target.classList.contains('occupied')) {
             console.log(e.target.classList)
             e.target.classList.add("hit")
             e.target.innerHTML = 'X'
             changePlayer()
-            message.innerHTML = 'Player 1\'s Turn'
+            message.innerHTML = 'Player 2\'s Turn'
         }else if(!e.target.classList.contains('occupied')) {
             e.target.classList.add("miss")
             e.target.innerHTML = '&#11044'
+            message.innerHTML = 'Player 2\'s Turn'
             changePlayer()
         }
     }else if(!startGame) {
@@ -172,11 +175,16 @@ cells.forEach((cell, index) => {
         }
      }     
 const boatPieces = {
-    Carrier: 5,
-    Battleship: 4,
-    Cruiser: 3,
-    Submarine: 3,
-    Destroyer: 2,
+    Carrier1: 5,
+    Battleship1: 4,
+    Cruiser1: 3,
+    Submarine1: 3,
+    Destroyer1: 2,
+    Carrier2: 5,
+    Battleship2: 4,
+    Cruiser2: 3,
+    Submarine2: 3,
+    Destroyer2: 2,
 }
 
 
