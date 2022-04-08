@@ -1,4 +1,4 @@
-
+//Variables
 const computer = document.querySelector('.computer')
 const player = document.querySelector('.player')
 console.log(player)
@@ -16,13 +16,15 @@ const cells = document.querySelectorAll('td')
 let startGame = false
 let playerTurn = true
 const ships = document.querySelector('.ships')
+const boats = document.querySelectorAll('.boats')
+let draggedItem = null;
 
 //Start Button
 startButton.addEventListener('click', () => {
     startGame = true
-    // cells.style.backgroundColor = 'lightblue'
-    // cells.style.opacity = '60%'
-    
+    cells.forEach(element => {
+        element.classList.add('gameStarted')
+    }) 
 })
 
 //Switching Turns
@@ -34,6 +36,7 @@ function changePlayer() {
     }
 }
 
+// Making the rotate button (Stretch Item)
 rotate.addEventListener('click', () => {
     carrier.classList.toggle('rotateShips')
     battleship.classList.toggle('rotateShips')
@@ -42,7 +45,7 @@ rotate.addEventListener('click', () => {
     destroyer.classList.toggle('rotateShips')
 })
 
-
+//Making hits and misses on the player 1 board
 player.addEventListener('click', (e) => {
     if(startGame && playerTurn) {
           if(e.target.classList.contains('occupied')) {
@@ -66,6 +69,7 @@ player.addEventListener('click', (e) => {
     }
 })
 
+//Making hits and misses on the player 2 board
 computer.addEventListener('click', (e) => {
     if(startGame && !playerTurn) {
         if(e.target.classList.contains('occupied')) {
@@ -88,26 +92,6 @@ computer.addEventListener('click', (e) => {
         }, 2000)
     }
 })
-
-// function hit() {
-//     cells.forEach(element => {
-//         element.addEventListener('click', () => {
-//               element.classList.add('hit')
-//               element.innerHTML = 'X' 
-//         })
-//     })
-// }
-
-// function miss() {
-//     cells.forEach(element => {
-//         element.addEventListener('click', () => {
-//             if(playerTurn){
-//               element.classList.add('miss')
-//               element.innerHTML = '	&#11044'
-//             }
-//         })
-//     })
-// }
 
 // const leftBoard = [
 //     [cell[0], cell[1], cell[2], cell[3], cell[4], cell[5], cell[6], cell[7], cell[8], cell[9]],
@@ -141,11 +125,7 @@ computer.addEventListener('click', (e) => {
 //got a lot of help from Troy Swayzee with this drag and drop
 
 
-const boats = document.querySelectorAll('.boats')
-
-let draggedItem = null;
     
-
 ships.addEventListener('dragstart', (e) => {
     // console.log(e.target.innerHTML)
     draggedItem = e.target

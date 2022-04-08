@@ -153,7 +153,7 @@ th {
 
 .hit {
     color: #f3172d;
-    opacity: 100%;
+    opacity: 100% !important;
     text-align: center;
     font-size: 28px;
     font-family: 'Alfa Slab One', sans-serif;
@@ -190,7 +190,7 @@ th {
 
 .miss {
     color: white;
-    opacity: 100%;
+    opacity: 100% !important;
     text-align: center;
     font-size: 28px;
     font-family: 'Alfa Slab One', sans-serif;
@@ -198,4 +198,9 @@ th {
 
 .occupied {
     opacity: 100%; 
+}
+
+.gameStarted {
+    background-color: lightblue !important;
+    opacity: 60%;
 }
