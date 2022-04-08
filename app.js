@@ -20,7 +20,9 @@ const ships = document.querySelector('.ships')
 //Start Button
 startButton.addEventListener('click', () => {
     startGame = true
-    boats.style.opacity = '0%'
+    // cells.style.backgroundColor = 'lightblue'
+    // cells.style.opacity = '60%'
+    
 })
 
 //Switching Turns
@@ -42,32 +44,48 @@ rotate.addEventListener('click', () => {
 
 
 player.addEventListener('click', (e) => {
-    if(startGame) {
+    if(startGame && playerTurn) {
           if(e.target.classList.contains('occupied')) {
         console.log(e.target.classList)
         e.target.classList.add("hit")
         e.target.innerHTML = 'X'
+        changePlayer()
+        message.innerHTML = 'Player 2\'s Turn'
     }else if(!e.target.classList.contains('occupied')) {
         e.target.classList.add("miss")
         e.target.innerHTML = '&#11044'
+        changePlayer()
     }
+    }else if(!playerTurn){
+        message.innerHTML = 'Wait your turn'
+        setTimeout(() =>{
+            message.innerHTML = 'Player 1\'s Turn'
+        }, 2000)
     }else {
-        message.innerHTML = 'Press Start Game to play'
+        message.innerHTML = 'Please press start'
     }
 })
 
 computer.addEventListener('click', (e) => {
-    if(startGame) {
-          if(e.target.classList.contains('occupied')) {
-        console.log(e.target.classList)
-        e.target.classList.add("hit")
-        e.target.innerHTML = 'X'
-    }else if(!e.target.classList.contains('occupied')) {
-        e.target.classList.add("miss")
-        e.target.innerHTML = '&#11044'
-    }
+    if(startGame && !playerTurn) {
+        if(e.target.classList.contains('occupied')) {
+            console.log(e.target.classList)
+            e.target.classList.add("hit")
+            e.target.innerHTML = 'X'
+            changePlayer()
+            message.innerHTML = 'Player 1\'s Turn'
+        }else if(!e.target.classList.contains('occupied')) {
+            e.target.classList.add("miss")
+            e.target.innerHTML = '&#11044'
+            changePlayer()
+        }
+    }else if(!startGame) {
+        message.innerHTML = 'Please press start'
     }else {
-        message.innerHTML = 'Press Start Game to play'
+        message.innerHTML = 'Wait your turn'
+        setTimeout(() =>{
+            message.innerHTML = 'Player 2\'s Turn'
+        }, 2000)
     }
 })
 
@@ -167,7 +185,6 @@ cells.forEach((cell, index) => {
           while (i < x) {
             console.log(i)  
             let currentCell = piece[index + i]
-            // currentCell.append(destroyer)
             currentCell.style.backgroundColor = 'gray'
             currentCell.classList.add('occupied')
             currentCell.appendChild(boat)
@@ -181,3 +198,11 @@ const boatPieces = {
     Submarine: 3,
     Destroyer: 2,
 }
+
+
+// if(!startGame){
+//     currentCell.style.backgroundColor = 'gray'
+// }else {
+//     currentCell.style.backgroundColor = 'lightblue'
+//     currentCell.style.opacity = '60%'
+// }

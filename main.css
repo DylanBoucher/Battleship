@@ -152,7 +152,6 @@ th {
 }
 
 .hit {
-    
     color: #f3172d;
     opacity: 100%;
     text-align: center;
@@ -165,11 +164,6 @@ th {
     height: 2.5rem;
     width: 13.5rem;
     margin-bottom: 5px;
-    /* max-width: 13.5rem;
-    max-height: 2.5rem;
-    min-width: 13.5rem;
-    min-height: 2.5rem; */
-    overflow: hidden;
 }
 
 .battleship {
