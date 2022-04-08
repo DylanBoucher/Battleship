@@ -8,19 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="main.css">
-    <!-- <script type="module">
-        import interact from 
-        'https://cdn.interactjs.io/v1.10.11/interactjs/index.js'
-        
-        interact('.item').draggable({
-          listeners: {
-            move (event) {
-              console.log(event.pageX,
-                          event.pageY)
-            }
-          }
-        })
-        </script> -->
     <script src="app.js" defer></script>
     <title>Battleship</title>
 </head>
@@ -60,7 +47,7 @@
 				<tr>
 				<th class="letters">B</th>
                 <td><div id = "10"></div></td>
-                <td><div id = "10"></div></td>
+                <td><div id = "11"></div></td>
                 <td><div id = "12"></div></td>
                 <td><div id = "13"></div></td>
                 <td><div id = "14"></div></td>
@@ -337,11 +324,11 @@
         <button class="rotate">Rotate Ships</button>
     </div>
     <div class="ships">
-        <div draggable = "true" class="boats carrier">Carrier</div>
-        <div draggable = "true" class="boats battleship">Battleship</div>
-        <div draggable = "true" class="boats cruiser">Cruiser</div>
-        <div draggable = "true" class="boats submarine">Submarine</div>
-        <div draggable = "true" class="boats destroyer">Destroyer</div>
+        <div draggable = "true" data-length= '5' class="boats carrier">Carrier</div>
+        <div draggable = "true" data-length= '4' class="boats battleship">Battleship</div>
+        <div draggable = "true" data-length= '3' class="boats cruiser">Cruiser</div>
+        <div draggable = "true" data-length= '3' class="boats submarine">Submarine</div>
+        <div draggable = "true" data-length= '2' class="boats destroyer">Destroyer</div>
     </div>
     
 </body>

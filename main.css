@@ -50,18 +50,26 @@ td {
     width: 2.5rem;
     background-color: lightblue;
     opacity: 60%;
+    max-width: 2.5rem;
+    max-height: 2.5rem;
+    overflow: visible;
     /* cursor: crosshair; */
 }
 
+td:hover, td:focus {
+    background-color: gray;
+}
+
+table div {
+    background-color: red;
+}
 table {
     border-spacing: 0px;
-    /* background: url('https://curehht.org/wp-content/uploads/2017/05/water-background-image-1024x683.jpg'); */
-    /* background-repeat: no-repeat; */
     
 }
 
 th {
-    /* background: none; */
+
     color: white; 
 }
 
@@ -157,6 +165,10 @@ th {
     height: 2.5rem;
     width: 13.5rem;
     margin-bottom: 5px;
+    max-width: 13.5rem;
+    max-height: 2.5rem;
+    min-width: 13.5rem;
+    min-height: 2.5rem;
 }
 
 .battleship {
@@ -178,6 +190,7 @@ th {
     height: 2.5rem;
     width: 5.5rem;
     margin-bottom: 5px;
+    
 }
 
 .miss {
@@ -186,4 +199,8 @@ th {
     text-align: center;
     font-size: 28px;
     font-family: 'Alfa Slab One', sans-serif;
+}
+
+.occupied {
+    opacity: 100%; 
 }
