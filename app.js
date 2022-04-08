@@ -17,13 +17,13 @@ let startGame = false
 let playerTurn = true
 const ships = document.querySelector('.ships')
 
-
+//Start Button
 startButton.addEventListener('click', () => {
     startGame = true
+    boats.style.opacity = '0%'
 })
 
-
-
+//Switching Turns
 function changePlayer() {
     if(playerTurn) {
         playerTurn = false
@@ -40,47 +40,56 @@ rotate.addEventListener('click', () => {
     destroyer.classList.toggle('rotateShips')
 })
 
-// player.addEventListener('click', () => {
-//     if (!playerTurn) {
-//         hit()
-//         playerTurn = true
-//         console.log(playerTurn)
-//     }else if(playerTurn) {
-//         message.innerText = 'Players turn'
-//     }
-   
-// })
 
-// computer.addEventListener('click', () => {
-//    if(playerTurn) {
-//        hit()
-//        playerTurn =false
-//        console.log(playerTurn)
-       
-//    }else if(!playerTurn) {
-//        message.innerText = 'computers turn'
-//    }
-// })
+player.addEventListener('click', (e) => {
+    if(startGame) {
+          if(e.target.classList.contains('occupied')) {
+        console.log(e.target.classList)
+        e.target.classList.add("hit")
+        e.target.innerHTML = 'X'
+    }else if(!e.target.classList.contains('occupied')) {
+        e.target.classList.add("miss")
+        e.target.innerHTML = '&#11044'
+    }
+    }else {
+        message.innerHTML = 'Press Start Game to play'
+    }
+})
 
-function hit() {
-    cell.forEach(element => {
-        element.addEventListener('click', () => {
-              element.classList.add('hit')
-              element.innerHTML = 'X' 
-        })
-    })
-}
+computer.addEventListener('click', (e) => {
+    if(startGame) {
+          if(e.target.classList.contains('occupied')) {
+        console.log(e.target.classList)
+        e.target.classList.add("hit")
+        e.target.innerHTML = 'X'
+    }else if(!e.target.classList.contains('occupied')) {
+        e.target.classList.add("miss")
+        e.target.innerHTML = '&#11044'
+    }
+    }else {
+        message.innerHTML = 'Press Start Game to play'
+    }
+})
 
-function miss() {
-    cell.forEach(element => {
-        element.addEventListener('click', () => {
-            if(playerTurn){
-              element.classList.add('miss')
-              element.innerHTML = '	&#11044'
-            }
-        })
-    })
-}
+// function hit() {
+//     cells.forEach(element => {
+//         element.addEventListener('click', () => {
+//               element.classList.add('hit')
+//               element.innerHTML = 'X' 
+//         })
+//     })
+// }
+
+// function miss() {
+//     cells.forEach(element => {
+//         element.addEventListener('click', () => {
+//             if(playerTurn){
+//               element.classList.add('miss')
+//               element.innerHTML = '	&#11044'
+//             }
+//         })
+//     })
+// }
 
 // const leftBoard = [
 //     [cell[0], cell[1], cell[2], cell[3], cell[4], cell[5], cell[6], cell[7], cell[8], cell[9]],
@@ -110,62 +119,28 @@ function miss() {
 // ]
 
 
-// leftBoard.forEach(element => {
-//     element.addEventListener('click', () => {
-//         if(playerTurn && startGame && element.classList.contains('occupied')) {
-//         hit()
-//     }
-//     })
-    
 
-// })
-
-// for(i = 0; i < leftBoard.length; i++) {
-//     for(j = 0; j < leftBoard.length; j++)
-//     leftBoard[i][j].addEventListener('click', () => {
-//     // console.log(leftBoard[i][j])
-//         if(playerTurn && startGame && cell.classList.contains('occupied')){
-//             hit()
-//             console.log(playerTurn)
-//             changePlayer()
-//         }else if(!playerTurn && startGame) {
-//             miss()
-//             changePlayer()
-//             console.log(playerTurn)
-//         }
-//      })
-// }
-
-
-//got a lot of help from Tyler Potts video: https://www.youtube.com/watch?v=tZ45HZAkbLc
+//got a lot of help from Troy Swayzee with this drag and drop
 
 
 const boats = document.querySelectorAll('.boats')
 
-
-
 let draggedItem = null;
     
 
-    ships.addEventListener('dragstart', (e) => {
-    // console.log(destroyer)
-    console.log(e.target.innerHTML)
+ships.addEventListener('dragstart', (e) => {
+    // console.log(e.target.innerHTML)
     draggedItem = e.target
     setTimeout(() => {
         e.target.style.display = 'none'
     }, 0) 
-
 })
-
 
 ships.addEventListener('dragend', (e) => {
     setTimeout(() => { 
-        
-        console.log(draggedItem)
         e.target.style.display = 'none'
     }, 0)
 })
-
 
 cells.forEach((cell, index) => {
     cell.addEventListener('dragenter', (e) => {
@@ -182,46 +157,27 @@ cells.forEach((cell, index) => {
     })
 
     cell.addEventListener('drop', (e) => {
-         console.log(draggedItem)
         placeShip(cells, index, draggedItem) 
     })
 })
     
   function placeShip(piece, index, boat) {
-      console.log(boat)
         let x = boatPieces[boat.innerHTML]
-        
         let i = 0
-        console.log(piece)
-        console.log(x)
           while (i < x) {
             console.log(i)  
             let currentCell = piece[index + i]
             // currentCell.append(destroyer)
-            currentCell.style.backgroundColor = 'red'
+            currentCell.style.backgroundColor = 'gray'
             currentCell.classList.add('occupied')
             currentCell.appendChild(boat)
-            
            i++
         }
      }     
 const boatPieces = {
-    Destroyer: 2,
     Carrier: 5,
     Battleship: 4,
     Cruiser: 3,
     Submarine: 3,
+    Destroyer: 2,
 }
-
-    
-
-
-
-       // let currentCell = cells[index]
-        // let nextCell = cells[index +boatPieces.destroyer]
-        // currentCell.append(destroyer)
-        // nextCell.append(destroyer)
-        // currentCell.style.backgroundColor = 'red'
-        // nextCell.style.backgroundColor = 'red'
-        // currentCell.classList.add('occupied')
-        // nextCell.classList.add('occupied')
