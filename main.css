@@ -64,11 +64,9 @@ table div {
 }
 table {
     border-spacing: 0px;
-    
 }
 
 th {
-
     color: white; 
 }
 
@@ -151,14 +149,6 @@ th {
     margin-top: 20px;
 }
 
-.hit {
-    color: #f3172d;
-    opacity: 100% !important;
-    text-align: center;
-    font-size: 28px;
-    font-family: 'Alfa Slab One', sans-serif;
-} 
-
 .carrier {
     background-color: gray;
     height: 2.5rem;
@@ -187,6 +177,15 @@ th {
     margin-bottom: 5px;
     
 }
+
+/* additional classes */
+.hit {
+    color: #f3172d;
+    opacity: 100% !important;
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Alfa Slab One', sans-serif;
+} 
 
 .miss {
     color: white;

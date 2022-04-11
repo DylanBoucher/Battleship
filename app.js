@@ -1,7 +1,6 @@
 //Variables
 const computer = document.querySelector('.computer')
 const player = document.querySelector('.player')
-console.log(player)
 const carrier = document.querySelector('.carrier')
 const battleship = document.querySelector('.battleship')
 const cruiser = document.querySelector('.cruiser')
@@ -20,6 +19,18 @@ const boats = document.querySelectorAll('.boats')
 let draggedItem = null;
 let player1Hits = 0
 let player2Hits = 0
+const boatPieces = {
+    Carrier1: 5,
+    Battleship1: 4,
+    Cruiser1: 3,
+    Submarine1: 3,
+    Destroyer1: 2,
+    Carrier2: 5,
+    Battleship2: 4,
+    Cruiser2: 3,
+    Submarine2: 3,
+    Destroyer2: 2,
+}
 
 //Start Button
 startButton.addEventListener('click', () => {
@@ -51,23 +62,24 @@ rotate.addEventListener('click', () => {
 //Making hits and misses on the player 1 board
 player.addEventListener('click', (e) => {
     if(startGame && !playerTurn) {
-          if(e.target.classList.contains('occupied')) {
-        console.log(e.target.classList)
-        e.target.classList.add("hit")
-        e.target.innerHTML = 'X'
-        player1Hits++
-        if(player1Hits === 17) {        //winning conditions
-            message.innerHTML = 'Player 2 Wins!'
-        } else {
+        if(e.target.classList.contains('occupied')) {
+            console.log(e.target.classList)
+            e.target.classList.add("hit")
+            e.target.innerHTML = 'X'
+            player1Hits++
+            if(player1Hits === 17) {        //winning conditions
+                message.innerHTML = 'Player 2 Wins!'
+                startGame = false
+            } else {
+                changePlayer()
+                message.innerHTML = 'Player 1\'s Turn'
+            }
+        }else if(!e.target.classList.contains('occupied')) {
+            e.target.classList.add("miss")
+            e.target.innerHTML = '&#11044'
             changePlayer()
             message.innerHTML = 'Player 1\'s Turn'
-        }
-    }else if(!e.target.classList.contains('occupied')) {
-        e.target.classList.add("miss")
-        e.target.innerHTML = '&#11044'
-        changePlayer()
-        message.innerHTML = 'Player 1\'s Turn'
-        startGame = false
+            
     }
     }else if(playerTurn){
         message.innerHTML = 'Wait your turn'
@@ -111,9 +123,7 @@ computer.addEventListener('click', (e) => {
 })
 
 //got a lot of help from Troy Swayzee with this drag and drop
- 
 ships.addEventListener('dragstart', (e) => {
-    // console.log(e.target.innerHTML)
     draggedItem = e.target
     setTimeout(() => {
         e.target.style.display = 'none'
@@ -145,27 +155,16 @@ cells.forEach((cell, index) => {
     })
 })
     
-  function placeShip(piece, index, boat) {
-        let x = boatPieces[boat.innerHTML]
-        let i = 0
-          while (i < x) {
-            console.log(i)  
-            let currentCell = piece[index + i]
-            currentCell.style.backgroundColor = 'gray'
-            currentCell.classList.add('occupied')
-            currentCell.appendChild(boat)
-           i++
-        }
-     }     
-const boatPieces = {
-    Carrier1: 5,
-    Battleship1: 4,
-    Cruiser1: 3,
-    Submarine1: 3,
-    Destroyer1: 2,
-    Carrier2: 5,
-    Battleship2: 4,
-    Cruiser2: 3,
-    Submarine2: 3,
-    Destroyer2: 2,
-}
+function placeShip(piece, index, boat) {
+    let x = boatPieces[boat.innerHTML]
+    let i = 0
+    while (i < x) {
+        console.log(i)  
+        let currentCell = piece[index + i]
+        currentCell.style.backgroundColor = 'gray'
+        currentCell.classList.add('occupied')
+        currentCell.appendChild(boat)
+        i++
+    }
+}     
+
