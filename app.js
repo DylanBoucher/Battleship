@@ -34,6 +34,7 @@ const boatPieces = {
     Destroyer2: 2,
 }
 
+
 //Start Button
 startButton.addEventListener('click', () => {
     startGame = true
@@ -62,17 +63,21 @@ rotate.addEventListener('click', () => {
         destroyer[i].classList.toggle('rotateShips')
         
     }
-    
-    
 })
 
 //Making hits and misses on the player 1 board
 player.addEventListener('click', (e) => {
     if(startGame && !playerTurn) {
-        if(e.target.classList.contains('occupied')) {
-            e.target.classList.add("hit")
-            e.target.innerHTML = 'X'
-            player1Hits++
+        if(e.target.classList.contains('hit') || e.target.classList.contains('miss')) {
+            message.innerHTML = 'Already shot there! <br> Try again!'
+            setTimeout(() =>{
+                message.innerHTML = 'Player 2\'s Turn!'
+            }, 2000)
+        }else {
+            if(e.target.classList.contains('occupied')) {
+                e.target.classList.add("hit")
+                e.target.innerHTML = 'X'
+                player1Hits++
             if(player1Hits === 17) {        //winning conditions
                 message.innerHTML = 'Player 2 Wins!'
                 startGame = false
@@ -86,6 +91,7 @@ player.addEventListener('click', (e) => {
             changePlayer()
             message.innerHTML = 'Player 1\'s Turn'    
         }
+    } 
     }else if(!startGame) {
         message.innerHTML = 'Please press start'
     }else {
@@ -99,10 +105,16 @@ player.addEventListener('click', (e) => {
 //Making hits and misses on the player 2 board
 computer.addEventListener('click', (e) => {
     if(startGame && playerTurn) {
-        if(e.target.classList.contains('occupied')) {
-            e.target.classList.add("hit")
-            e.target.innerHTML = 'X'
-            player2Hits++
+        if(e.target.classList.contains('hit') || e.target.classList.contains('miss')) {
+            message.innerHTML = 'Already shot there! <br> Try again!'
+            setTimeout(() =>{
+                message.innerHTML = 'Player 1\'s Turn!'
+            }, 2000)
+        }else {
+            if(e.target.classList.contains('occupied')) {
+                e.target.classList.add("hit")
+                e.target.innerHTML = 'X'
+                player2Hits++
             if(player2Hits === 17) {        //winning conditions
                 message.innerHTML = 'Player 1 Wins!'
                 startGame = false
@@ -116,6 +128,8 @@ computer.addEventListener('click', (e) => {
             message.innerHTML = 'Player 2\'s Turn'
             changePlayer()
         }
+        }
+      
     }else if(!startGame) {
         message.innerHTML = 'Please press start'
     }else {
