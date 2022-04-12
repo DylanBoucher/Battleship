@@ -5,6 +5,7 @@ Technologies used: Javascript, HTML5, and CSS3
 Getting Started: https://dylanboucher.github.io/Dylan-Boucher-Battleship/
 
 -If you would like to add to the game, or have any changes you think would be beneficial, you can make a pull request.
+
 -Start by dragging the ships on Player 1's board, once they are all placed, place Player 2's ships. Press Start and have fun.
 
 Next Steps: I would like to add an AI opponent. Fixing the overflow problem so that ships can't wrap around the board or go onto eachother. Also, making it so ships can "sink" would be a nice addition.
