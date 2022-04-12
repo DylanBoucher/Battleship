@@ -127,7 +127,7 @@ th {
     margin-top: 90px;
 }
 
-.start, .rotate {
+.start, .rotate, .reset{
     font-size: 18px;
     padding: 5px 7px;
     margin-left: 15px;
@@ -136,7 +136,7 @@ th {
     background-color: orange;
 }
 
-.start:hover, .start:focus, .rotate:hover, .rotate.focus {
+.start:hover, .start:focus, .rotate:hover, .rotate.focus, .reset:hover, .reset:focus{
     background-color: hsl(39, 100%, 40%);
 }
 
