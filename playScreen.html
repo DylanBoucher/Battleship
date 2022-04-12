@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <script src="app.js" defer></script>
+    <title>Battleship</title>
+</head>
+<body>
+    <div class="gameScreen"></div>
+    <div class="message">Player 1 <br> Place your ships!</div>
+    <div class="gameboard1">
+       
+        <table class="player">
+            <tr>
+				<th class="numbers"></th>
+				<th class="numbers">1</th>
+				<th class="numbers">2</th>
+				<th class="numbers">3</th>
+				<th class="numbers">4</th>
+				<th class="numbers">5</th>
+				<th class="numbers">6</th>
+                <th class="numbers">7</th>
+                <th class="numbers">8</th>
+                <th class="numbers">9</th>
+                <th class="numbers">10</th>
+			</tr>
+
+			<tr>
+				<th class="letters">A</th>
+                <td class = 'p1'><div id = "0"></div></td>
+                <td class = 'p1'><div id = "1"></div></td'>
+                <td class = 'p1'><div id = "2"></div></td>
+                <td class = 'p1'><div id = "3"></div></td>
+                <td class = 'p1'><div id = "4"></div></td>
+                <td class = 'p1'><div id = "5"></div></td>
+                <td class = 'p1'><div id = "6"></div></td>
+                <td class = 'p1'><div id = "7"></div></td>
+                <td class = 'p1'><div id = "8"></div></td>
+                <td class = 'p1'><div id = "9"></div></td>
+			</tr>
+				<tr>
+				<th class="letters">B</th>
+                <td class = 'p1'><div id = "10"></div></td>
+                <td class = 'p1'><div id = "11"></div></td>
+                <td class = 'p1'><div id = "12"></div></td>
+                <td class = 'p1'><div id = "13"></div></td>
+                <td class = 'p1'><div id = "14"></div></td>
+                <td class = 'p1'><div id = "15"></div></td>
+                <td class = 'p1'><div id = "16"></div></td>
+                <td class = 'p1'><div id = "17"></div></td>
+                <td class = 'p1'><div id = "18"></div></td>
+                <td class = 'p1'><div id = "19"></div></td>
+			<tr>
+				<th class="letters">C</th>
+                <td class = 'p1'><div id = "20"></div></td>
+                <td class = 'p1'><div id = "21"></div></td>
+                <td class = 'p1'><div id = "22"></div></td>
+                <td class = 'p1'><div id = "23"></div></td>
+                <td class = 'p1'><div id = "24"></div></td>
+                <td class = 'p1'><div id = "25"></div></td>
+                <td class = 'p1'><div id = "26"></div></td>
+                <td class = 'p1'><div id = "27"></div></td>
+                <td class = 'p1'><div id = "28"></div></td>
+                <td class = 'p1'><div id = "29"></div></td>
+			</tr>
+				</tr>
+				<tr>
+				<th class="letters">D</th>
+				<td class = 'p1'><div id = "30"></div></td>
+                <td class = 'p1'><div id = "31"></div></td>
+                <td class = 'p1'><div id = "32"></div></td>
+                <td class = 'p1'><div id = "33"></div></td>
+                <td class = 'p1'><div id = "34"></div></td>
+                <td class = 'p1'><div id = "35"></div></td>
+                <td class = 'p1'><div id = "36"></div></td>
+                <td class = 'p1'><div id = "37"></div></td>
+                <td class = 'p1'><div id = "38"></div></td>
+                <td class = 'p1'><div id = "39"></div></td>
+			</tr>
+			<tr>
+				<th class="letters">E</th>
+                <td class = 'p1'><div id = "40"></div></td>
+                <td class = 'p1'><div id = "41"></div></td>
+                <td class = 'p1'><div id = "42"></div></td>
+                <td class = 'p1'><div id = "43"></div></td>
+                <td class = 'p1'><div id = "44"></div></td>
+                <td class = 'p1'><div id = "45"></div></td>
+                <td class = 'p1'><div id = "46"></div></td>
+                <td class = 'p1'><div id = "47"></div></td>
+                <td class = 'p1'><div id = "48"></div></td>
+                <td class = 'p1'><div id = "49"></div></td>
+			</tr>
+			<tr>
+				<th class="letters">F</th>
+                <td class = 'p1'><div id = "50"></div></td>
+                <td class = 'p1'><div id = "51"></div></td>
+                <td class = 'p1'><div id = "52"></div></td>
+                <td class = 'p1'><div id = "53"></div></td>
+                <td class = 'p1'><div id = "54"></div></td>
+                <td class = 'p1'><div id = "55"></div></td>
+                <td class = 'p1'><div id = "56"></div></td>
+                <td class = 'p1'><div id = "57"></div></td>
+                <td class = 'p1'><div id = "58"></div></td>
+                <td class = 'p1'><div id = "59"></div></td>
+			<tr>
+				<th class="letters">G</th>
+                <td class = 'p1'><div id = "60"></div></td>
+                <td class = 'p1'><div id = "61"></div></td>
+                <td class = 'p1'><div id = "62"></div></td>
+                <td class = 'p1'><div id = "63"></div></td>
+                <td class = 'p1'><div id = "64"></div></td'>
+                <td class = 'p1'><div id = "65"></div></td>
+                <td class = 'p1'><div id = "66"></div></td>
+                <td class = 'p1'><div id = "67"></div></td>
+                <td class = 'p1'><div id = "68"></div></td>
+                <td class = 'p1'><div id = "69"></div></td>
+			</tr>
+            <tr>
+                <th class="letters">H</th>
+                <td class = 'p1'><div id = "70"></div></td>
+                <td class = 'p1'><div id = "71"></div></td>
+                <td class = 'p1'><div id = "72"></div></td>
+                <td class = 'p1'><div id = "73"></div></td>
+                <td class = 'p1'><div id = "74"></div></td>
+                <td class = 'p1'><div id = "75"></div></td>
+                <td class = 'p1'><div id = "76"></div></td>
+                <td class = 'p1'><div id = "77"></div></td>
+                <td class = 'p1'><div id = "78"></div></td>
+                <td class = 'p1'><div id = "79"></div></td>
+            </tr>
+            <tr>
+                <th class="letters">I</th>
+                <td class = 'p1'><div id = "80"></div></td>
+                <td class = 'p1'><div id = "81"></div></td>
+                <td class = 'p1'><div id = "82"></div></td>
+                <td class = 'p1'><div id = "83"></div></td>
+                <td class = 'p1'><div id = "84"></div></td>
+                <td class = 'p1'><div id = "85"></div></td>
+                <td class = 'p1'><div id = "86"></div></td>
+                <td class = 'p1'><div id = "87"></div></td>
+                <td class = 'p1'><div id = "88"></div></td>
+                <td class = 'p1'><div id = "89"></div></td>
+            </tr>
+            <tr>
+                <th class="letters">J</th>
+                <td class = 'p1'><div id = "90"></div></td>
+                <td class = 'p1'><div id = "91"></div></td>
+                <td class = 'p1'><div id = "92"></div></td>
+                <td class = 'p1'><div id = "93"></div></td>
+                <td class = 'p1'><div id = "94"></div></td>
+                <td class = 'p1'><div id = "95"></div></td>
+                <td class = 'p1'><div id = "96"></div></td'>
+                <td class = 'p1'><div id = "97"></div></td>
+                <td class = 'p1'><div id = "98"></div></td>
+                <td class = 'p1'><div id = "99"></div></td>
+            </tr>
+        </table>
+
+         <div class="gameboardMessage">
+            <div class="playerGameboard">Player 1</div>
+        </div>
+    </div>
+
+    <div class="gameboard2">
+        <table class="computer">
+            <tr>
+				<th class="numbers"></th>
+				<th class="numbers">1</th>
+				<th class="numbers">2</th>
+				<th class="numbers">3</th>
+				<th class="numbers">4</th>
+				<th class="numbers">5</th>
+				<th class="numbers">6</th>
+                <th class="numbers">7</th>
+                <th class="numbers">8</th>
+                <th class="numbers">9</th>
+                <th class="numbers">10</th>
+			</tr>
+
+			<tr>
+				<th class="letters">A</th>
+                <td><div id = "0"></div></td>
+                <td><div id = "1"></div></td>
+                <td><div id = "2"></div></td>
+                <td><div id = "3"></div></td>
+                <td><div id = "4"></div></td>
+                <td><div id = "5"></div></td>
+                <td><div id = "6"></div></td>
+                <td><div id = "7"></div></td>
+                <td><div id = "8"></div></td>
+                <td><div id = "9"></div></td>
+			</tr>
+				<tr>
+				<th class="letters">B</th>
+                <td><div id = "10"></div></td>
+                <td><div id = "10"></div></td>
+                <td><div id = "12"></div></td>
+                <td><div id = "13"></div></td>
+                <td><div id = "14"></div></td>
+                <td><div id = "15"></div></td>
+                <td><div id = "16"></div></td>
+                <td><div id = "17"></div></td>
+                <td><div id = "18"></div></td>
+                <td><div id = "19"></div></td>
+			<tr>
+				<th class="letters">C</th>
+                <td><div id = "20"></div></td>
+                <td><div id = "21"></div></td>
+                <td><div id = "22"></div></td>
+                <td><div id = "23"></div></td>
+                <td><div id = "24"></div></td>
+                <td><div id = "25"></div></td>
+                <td><div id = "26"></div></td>
+                <td><div id = "27"></div></td>
+                <td><div id = "28"></div></td>
+                <td><div id = "29"></div></td>
+			</tr>
+				</tr>
+				<tr>
+				<th class="letters">D</th>
+				<td><div id = "30"></div></td>
+                <td><div id = "31"></div></td>
+                <td><div id = "32"></div></td>
+                <td><div id = "33"></div></td>
+                <td><div id = "34"></div></td>
+                <td><div id = "35"></div></td>
+                <td><div id = "36"></div></td>
+                <td><div id = "37"></div></td>
+                <td><div id = "38"></div></td>
+                <td><div id = "39"></div></td>
+			</tr>
+			<tr>
+				<th class="letters">E</th>
+                <td><div id = "40"></div></td>
+                <td><div id = "41"></div></td>
+                <td><div id = "42"></div></td>
+                <td><div id = "43"></div></td>
+                <td><div id = "44"></div></td>
+                <td><div id = "45"></div></td>
+                <td><div id = "46"></div></td>
+                <td><div id = "47"></div></td>
+                <td><div id = "48"></div></td>
+                <td><div id = "49"></div></td>
+			</tr>
+			<tr>
+				<th class="letters">F</th>
+                <td><div id = "50"></div></td>
+                <td><div id = "51"></div></td>
+                <td><div id = "52"></div></td>
+                <td><div id = "53"></div></td>
+                <td><div id = "54"></div></td>
+                <td><div id = "55"></div></td>
+                <td><div id = "56"></div></td>
+                <td><div id = "57"></div></td>
+                <td><div id = "58"></div></td>
+                <td><div id = "59"></div></td>
+			<tr>
+				<th class="letters">G</th>
+                <td><div id = "60"></div></td>
+                <td><div id = "61"></div></td>
+                <td><div id = "62"></div></td>
+                <td><div id = "63"></div></td>
+                <td><div id = "64"></div></td>
+                <td><div id = "65"></div></td>
+                <td><div id = "66"></div></td>
+                <td><div id = "67"></div></td>
+                <td><div id = "68"></div></td>
+                <td><div id = "69"></div></td>
+			</tr>
+            <tr>
+                <th class="letters">H</th>
+                <td><div id = "70"></div></td>
+                <td><div id = "71"></div></td>
+                <td><div id = "72"></div></td>
+                <td><div id = "73"></div></td>
+                <td><div id = "74"></div></td>
+                <td><div id = "75"></div></td>
+                <td><div id = "76"></div></td>
+                <td><div id = "77"></div></td>
+                <td><div id = "78"></div></td>
+                <td><div id = "79"></div></td>
+            </tr>
+            <tr>
+                <th class="letters">I</th>
+                <td><div id = "80"></div></td>
+                <td><div id = "81"></div></td>
+                <td><div id = "82"></div></td>
+                <td><div id = "83"></div></td>
+                <td><div id = "84"></div></td>
+                <td><div id = "85"></div></td>
+                <td><div id = "86"></div></td>
+                <td><div id = "87"></div></td>
+                <td><div id = "88"></div></td>
+                <td><div id = "89"></div></td>
+            </tr>
+            <tr>
+                <th class="letters">J</th>
+                <td><div id = "90"></div></td>
+                <td><div id = "91"></div></td>
+                <td><div id = "92"></div></td>
+                <td><div id = "93"></div></td>
+                <td><div id = "94"></div></td>
+                <td><div id = "95"></div></td>
+                <td><div id = "96"></div></td>
+                <td><div id = "97"></div></td>
+                <td><div id = "98"></div></td>
+                <td><div id = "99"></div></td>
+            </tr>
+        </table>
+
+        <div class="gameboardMessage">
+            <div class="computerGameboard">Player 2</div>
+        </div>
+    </div>
+      
+    <div class="buttons">
+        <button class="start">Start Game</button>
+        <button class="rotate">Rotate Ships</button>
+        <button class="reset">Restart</button>
+    </div>
+    <div class="ships">
+        <div draggable = "true" data-length= '5' class="boats carrier">Carrier1</div>
+        <div draggable = "true" data-length= '4' class="boats battleship">Battleship1</div>
+        <div draggable = "true" data-length= '3' class="boats cruiser">Cruiser1</div>
+        <div draggable = "true" data-length= '3' class="boats submarine">Submarine1</div>
+        <div draggable = "true" data-length= '2' class="boats destroyer">Destroyer1</div>
+        <div draggable = "true" data-length= '5' class="boats p2 carrier">Carrier2</div>
+        <div draggable = "true" data-length= '4' class="boats p2 battleship">Battleship2</div>
+        <div draggable = "true" data-length= '3' class="boats p2 cruiser">Cruiser2</div>
+        <div draggable = "true" data-length= '3' class="boats p2 submarine">Submarine2</div>
+        <div draggable = "true" data-length= '2' class="boats p2 destroyer">Destroyer2</div>
+    </div>
+    
+</body>
+</html>
