@@ -2,7 +2,7 @@ Battleship - A multiplayer strategy game, where you try to sink the other player
 
 Technologies used: Javascript, HTML, and CSS
 
-Getting Started:
+Getting Started: https://dylanboucher.github.io/Dylan-Boucher-Battleship/
 
 Next Steps: A computer opponent, nicer looking ships, better overflow control.
 
