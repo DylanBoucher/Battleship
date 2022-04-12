@@ -12,4 +12,4 @@ Next Steps: I would like to add an AI opponent. Fixing the overflow problem so t
 
 Title Screen: ![battleship title screen](https://user-images.githubusercontent.com/99612054/162754925-2c963438-2f70-45d6-b725-24f8b40d995b.png)
 
-Play Screen: ![battleship play screen](https://user-images.githubusercontent.com/99612054/162827380-97a147b1-d46c-416a-bbdb-76e0bca3f180.png)
+Play Screen: ![battleship play screen](https://user-images.githubusercontent.com/99612054/162981302-bbdf707a-556a-45fa-98cf-89a5d1465d4e.png)
